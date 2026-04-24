@@ -30,7 +30,7 @@ namespace Masar_Backend_v1.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, new { success = false, message = "فشل في إرسال الرسالة، حاول مرة أخرى لاحقاً." });
+                return StatusCode(500, new { success = false, message = ex.Message });
             }
         }
 
