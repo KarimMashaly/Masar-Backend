@@ -1,13 +1,16 @@
-﻿using Masar_Backend_v1.Models;
+﻿using MailKit.Net.Smtp; // مهم جداً عشان نستخدم SmtpClient بتاع MailKit
+using MailKit.Security;
+using MimeKit;
+using MimeKit.Text;
+using Masar_Backend_v1.Models;
+
 
 namespace Masar_Backend_v1.Services
 {
-
     public interface IMasarService
     {
         Task<TrackRecommendation> GetRecommendationAsync(Dictionary<string, string> answers);
     }
-
     public class MasarService : IMasarService
     {
         private readonly HttpClient _httpClient;

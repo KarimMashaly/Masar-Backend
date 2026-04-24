@@ -12,6 +12,8 @@ namespace Masar_Backend_v1
 
             // Add services to the container.
             builder.Services.AddHttpClient<IMasarService, MasarService>();
+            builder.Services.AddScoped<IEmailService, EmailService>();
+
             builder.Services.AddCors(options => {
                 options.AddDefaultPolicy(policy => {
                     policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
@@ -36,8 +38,9 @@ namespace Masar_Backend_v1
 
 
             app.MapControllers();
-            var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
-            app.Run($"http://0.0.0.0:{port}");
+            //var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
+            //app.Run($"http://0.0.0.0:{port}");
+            app.Run();
         }
     }
 }

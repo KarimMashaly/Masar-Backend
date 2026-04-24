@@ -1,6 +1,5 @@
 ﻿using Masar_Backend_v1.Models;
 using Masar_Backend_v1.Services;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Masar_Backend_v1.Controllers
@@ -10,7 +9,7 @@ namespace Masar_Backend_v1.Controllers
     public class RecommendController : ControllerBase
     {
         private readonly IMasarService _masarService;
-
+        
         public RecommendController(IMasarService masarService)
         {
             _masarService = masarService;
